@@ -1,0 +1,177 @@
+.interests {
+  height: 100vh;
+  max-height: 57vw;
+  width: 100%;
+  background: white;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  &__container {
+    width: 25%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin-bottom: 1vw;
+    display: block;
+  }
+
+  &__name {
+    color: black;
+    font-weight: 700;
+    font-size: 1.5vw;
+    margin-bottom: 2.5vw;
+  }
+
+  &__description {
+    color: black;
+    font-weight: 600;
+    font-size: 1.2vw;
+  }
+}
+
+//Animations
+
+.interests {
+  &_element1_showFromTop {
+    will-change: transform, opacity;
+    animation-name: ShowFromLeft;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+
+  &_element2_showFromTop {
+    will-change: transform, opacity;
+    animation-name: ShowFromTop;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+
+  &_element3_showFromTop {
+    will-change: transform, opacity;
+    animation-name: ShowFromRight;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  @media screen and (max-aspect-ratio: 14/10) {
+    .interests {      
+      padding: 0;
+      
+      &__description {
+        font-size: 1.3vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .interests {
+    height: auto;
+    max-height: initial;
+    padding: 40px 5vw;
+    padding-top: 0;
+    flex-direction: column;
+
+    &__container {
+      width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-areas: 
+      "a b"
+      "a c";
+      grid-template-columns: 15% 85%;
+      grid-template-rows: 15% 85%;
+      margin-bottom: 40px;
+
+      &_last {
+        margin-bottom: 0;
+      }
+    }
+
+    &__img {
+      grid-area: a;
+      display: block;
+      margin: 0;
+    }
+
+    &__name {
+      margin: 0;
+      grid-area: b;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    &__description {
+      margin-left: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .interests {
+
+    &__container {
+      grid-template-columns: 25% 75%;
+      grid-template-rows: 25% 75%;
+    }
+
+    &__img {
+      grid-area: a;
+      width: 25vw;
+      height: 25vw;
+    }
+
+    &__description {
+      margin-left: 35px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .interests {
+
+    &__container {
+      grid-template-columns: 0% 100%;
+      grid-template-rows: 0% 100%;
+    }
+
+    &__img {
+      opacity: 0;
+    }
+
+    &__description {
+      margin-left: 0;
+    }
+  }
+}
+
+//Adaptive animations
+
+.interests {
+  &_adaptiveElement1_showFromTop,
+  &_adaptiveElement2_showFromTop,
+  &_adaptiveElement3_showFromTop {
+    will-change: transform, opacity;
+    animation-name: ShowFromLeft;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+}
