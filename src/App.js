@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './styles/styles.css';
+import { dataRu, dataEn } from './data/data.js';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
@@ -49,7 +50,9 @@ class App extends Component {
       width: window.innerWidth,
       showProgramming: false,
       showDesignSkills: false,
-    }
+      language: 'en',
+      data: { ...dataEn },
+    };
 
     this.aboutMeElements = this.state.width > 1000 
       ? aboutMeElements
@@ -58,12 +61,38 @@ class App extends Component {
     this.interestsElements = this.state.width > 1000
       ? interestsElements
       : interestsAdaptiveElements;
-  }
+  };
 
   componentDidMount() {
     window.addEventListener('scroll', this.scrolling);
-    this.scrolling();
-  }
+    this.setState(prev => {
+      return {
+        language: JSON.parse(localStorage.getItem('language')) || 'en'
+      }
+    }, () => {
+      this.setState({
+        data: this.state.language === 'en' ? { ...dataEn } : { ...dataRu },
+      });
+    });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.language !== this.state.language) {
+      this.setState({
+        data: this.state.language === 'en' ? { ...dataEn } : { ...dataRu },
+      });
+    };
+  };
+
+  languageChange = () => {
+    this.setState(prev => {
+      return {
+        language: prev.language === 'en' ? 'ru' : 'en',
+      }
+    }, () => {
+      localStorage.setItem('language', JSON.stringify(this.state.language));
+    })
+  };
 
   scrolling = () => {
     const elementsArray = [
@@ -82,11 +111,11 @@ class App extends Component {
     ];
 
     for (const el of elementsArray) {
-      if (window.innerHeight >= el.getBoundingClientRect().y 
+      if (window.innerHeight >= el.getBoundingClientRect().y + 10
         && !el.classList.contains(`${el.id}_showFromTop`)
         && el.getBoundingClientRect().y >= el.clientHeight * -1) {
         el.classList.add(`${el.id}_showFromTop`);
-        if (el.classList.contains('skills_frontEnd_showFromTop')) {
+        if (el.classList.contains('skills_frontEnd_showFromTop')) { 
           this.setState({
             showProgrammingSkills: true
           })
@@ -98,24 +127,31 @@ class App extends Component {
         }
       }
     };
-  }
+  };
 
   render() {
     return(
       <>
-      <Header/>
-      <Main 
-        aboutMeElementsId={this.aboutMeElements}
-        skillsElementsId={this.skillsElements}
-        showProgrammingSkills={this.state.showProgrammingSkills}
-        showDesignSkills={this.state.showDesignSkills}
-        interestsElementsId={this.interestsElements}
-      >
-      </Main>
-      <Footer/>
+        <Header
+          data={this.state.data}
+          languageChange={this.languageChange}
+          languageCurrent={this.state.language}>
+        </Header>
+        <Main
+          data={this.state.data} 
+          aboutMeElementsId={this.aboutMeElements}
+          skillsElementsId={this.skillsElements}
+          showProgrammingSkills={this.state.showProgrammingSkills}
+          showDesignSkills={this.state.showDesignSkills}
+          interestsElementsId={this.interestsElements}
+        >
+        </Main>
+        <Footer
+          data={this.state.data}>
+        </Footer>
       </>
     )
-  }
-}
+  };
+};
 
 export default App;

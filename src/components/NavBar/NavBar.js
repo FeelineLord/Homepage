@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import data from '../../data/data';
 
 import logo from '../../img/logo.png';
 
 import Welcome from '../Welcome/Welcome';
+import SettingsBar from './SettingsBar/SettingsBar';
 
 class NavBar extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class NavBar extends Component {
       height: window.innerHeight,
       burger: false,
       activeLink: 0,
+      fullscreen: false,
     }
 
     this.burgerWasNotTouched = true;
@@ -33,7 +34,13 @@ class NavBar extends Component {
       this.setState({
         burger: false,
       })
-    }
+    };
+  };
+
+  fullScreenChangeOutside = (value) => {
+    this.setState({
+        fullscreen: value
+    });
   };
 
   burgerSwitcher = () => {
@@ -59,12 +66,28 @@ class NavBar extends Component {
     });
   };
 
+  navScroll = (event) => {
+    event.preventDefault();
+    const link = event.target;
+    this.setState({
+      activeLink: +link.id
+    }, () => {
+      let href = link.getAttribute('href');
+      let requiredBlock = document.querySelector(href);
+      requiredBlock.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    })
+  }
+
   renderNavBar = () => {
+    const data = this.props.data;
     switch(true) {
-      case this.state.width >= 1000:
+      case this.state.width >= 1100:
       return (
         <nav className={'navBar ' + this.props.className}>
-          <div className='navBar_dark'></div>
+          {/* <div className='navBar_dark'></div> */}
           <ul className='navBar__list' id='burgerList'>
             {data.linkNamesCurrent.map((item, index) => {
               if (this.state.activeLink === index) {
@@ -74,6 +97,7 @@ class NavBar extends Component {
                     key={item.name}>
                     <a 
                       href={'#' + item.href} 
+                      id={index}
                       className={'navBar__link activeLink'} 
                     >
                       {item.name}
@@ -87,23 +111,38 @@ class NavBar extends Component {
                     key={item.name}>
                     <a 
                       href={'#' + item.href} 
+                      id={index}
                       className={'navBar__link hoverLink'} 
-                      onClick={() => {this.setState({activeLink: index})}}>
+                      onClick={this.navScroll}>
                       {item.name}
                     </a>
                   </li>
                 )
               }
             })}
+            <li className='navBar__item'>
+              <SettingsBar
+                className='navBar__settingsBar'
+                languageChange={this.props.languageChange}
+                languageCurrent={this.props.languageCurrent}
+                fullscreen={this.state.fullscreen}
+                outside={this.fullScreenChangeOutside}>
+              </SettingsBar>
+            </li>
           </ul>
         </nav>
       );
 
-      case this.state.width < 1000:
+      case this.state.width < 1100:
       return (
         <nav className={'navBar ' + this.props.className}>
-          <div className='navBar_dark'></div>
-          <Welcome logo={logo} className='navBar__welcome'></Welcome>
+            <SettingsBar
+              className='navBar__settingsBar'
+              languageChange={this.props.languageChange}
+              languageCurrent={this.props.languageCurrent}
+              fullscreen={this.state.fullscreen}
+              outside={this.fullScreenChangeOutside}>
+            </SettingsBar>
           <div className='navBar__switcher' id='burgerButton' onClick={this.burgerSwitcher}>
             <span className='navBar__burgerItem' id='burgerSwitcher'></span>
           </div>
@@ -115,7 +154,8 @@ class NavBar extends Component {
                     className='navBar__item navBar__adaptiveItem'
                     key={item.name}>
                     <a 
-                      href={'#' + item.href} 
+                      href={'#' + item.href}
+                      id={index} 
                       className='navBar__link navBar__link_adaptive activeLink' 
                     >
                       {item.name}
@@ -128,9 +168,10 @@ class NavBar extends Component {
                     className='navBar__item navBar__adaptiveItem'
                     key={item.name}>
                     <a 
-                      href={'#' + item.href} 
+                      href={'#' + item.href}
+                      id={index} 
                       className='navBar__link navBar__link_adaptive hoverLink'
-                      onClick={() => {this.setState({activeLink: index})}}
+                      onClick={this.navScroll}
                     >
                       {item.name}
                     </a>
@@ -138,7 +179,7 @@ class NavBar extends Component {
                 )
               }
             })}
-            <div className='navBar_dark navBar_dark_ul'></div>
+            {/* <div className='navBar_dark navBar_dark_ul'></div> */}
           </ul>
         </nav>
       );

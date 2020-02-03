@@ -4,7 +4,6 @@ import Swiper from 'swiper';
 import dia from '../../img/dia.png';
 import miami from '../../img/miami.png';
 import todo from '../../img/todo.png';
-import data from '../../data/data';
 
 class Portfolio extends Component {
   constructor() {
@@ -53,6 +52,7 @@ class Portfolio extends Component {
   }
 
   render() {
+    const data = this.props.data;
     return(
       <>
       <section className='portfolio' id='portfolio'>

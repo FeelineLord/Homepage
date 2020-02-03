@@ -1,0 +1,187 @@
+.fullScreen {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: 1px solid black;
+  box-shadow: inset 0px 0px 21px 0px rgba(0,0,0,0.75);
+  position: relative;
+
+  /* width: 64px;
+  height: 64px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url(../img/settingsBg.png);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  border: none;
+  display: block;
+  padding: 0;
+  position: relative; */
+
+  &:focus {
+    outline: none;
+  }
+
+  &__arrow1,
+  &__arrow2,
+  &__arrow3,
+  &__arrow4 {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/windowArrow.png);
+    background-size: contain;
+    background-position: center;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+  }
+
+  &__arrow1 {
+    top: 5px;
+    left: 5px;
+    transform: rotate(90deg);
+
+    &_hover {
+      animation-name: fullScreenArrowTopLeft;
+    }
+  }
+
+  &__arrow2 {
+    top: 5px;
+    right: 5px;
+    transform: rotate(180deg);
+
+    &_hover {
+      animation-name: fullScreenArrowTopRight;
+    }
+  }
+
+  &__arrow3 {
+    bottom: 5px;
+    left: 5px;
+
+    &_hover {
+      animation-name: fullScreenArrowBottomLeft;
+    }
+  }
+
+  &__arrow4 {
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(-90deg);
+
+    &_hover {
+      animation-name: fullScreenArrowBottomRight;
+    }
+  }
+
+  &__windowArrow1,
+  &__windowArrow2 {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/windowArrow.png);
+    background-size: contain;
+    background-position: center;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+  }
+
+  &__windowArrow1 {
+    top: 8px;
+    right: 8px;
+    transform: rotate(0deg);
+
+    &_hover {
+      animation-name: windowArrowTopRight;
+    }
+  }
+
+  &__windowArrow2 {
+    bottom: 8px;
+    left: 8px;
+    transform: rotate(180deg);
+
+    &_hover {
+      animation-name: windowArrowBottomLeft;
+    }
+  }
+}
+
+@keyframes windowArrowTopRight {
+  0% {transform: translateX(0) translateY(0)}
+
+  50% {transform: translateX(5px) translateY(-5px)}
+
+  100% {transform: translateX(0) translateY(0)}
+}
+
+@keyframes windowArrowBottomLeft {
+  0% {transform: rotate(180deg) translateX(0) translateY(0)}
+
+  50% {transform: rotate(180deg) translateX(5px) translateY(-5px)}
+
+  100% {transform: rotate(180deg) translateX(0) translateY(0)}
+}
+
+@keyframes fullScreenArrowTopLeft {
+  0% {transform: rotate(90deg) translateX(0) translateY(0)}
+
+  50% {transform: rotate(90deg) translateX(5px) translateY(-5px)}
+
+  100% {transform: rotate(90deg) translateX(0) translateY(0)}
+}
+
+@keyframes fullScreenArrowTopRight {
+  0% {transform: rotate(180deg) translateX(0) translateY(0)}
+
+  50% {transform: rotate(180deg) translateX(5px) translateY(-5px)}
+
+  100% {transform: rotate(180deg) translateX(0) translateY(0)}
+}
+
+@keyframes fullScreenArrowBottomLeft {
+  0% {transform: translateX(0) translateY(0)}
+
+  50% {transform: translateX(5px) translateY(-5px)}
+
+  100% {transform: translateX(0) translateY(0)}
+}
+
+@keyframes fullScreenArrowBottomRight {
+  0% {transform: rotate(-90deg) translateX(0) translateY(0)}
+
+  50% {transform: rotate(-90deg) translateX(5px) translateY(-5px)}
+
+  100% {transform: rotate(-90deg) translateX(0) translateY(0)}
+}
+
+@media screen and(max-width: 600px) {
+  .fullScreen {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.75);
+    position: relative;
+
+    &__arrow1,
+    &__arrow2,
+    &__arrow3,
+    &__arrow4 {
+      width: 10px;
+      height: 10px;
+    }
+
+    &__windowArrow1,
+    &__windowArrow2 {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

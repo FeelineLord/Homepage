@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import data from '../../data/data';
 
 import photo1 from '../../img/photo1.jpg';
 import photo2 from '../../img/photo2.JPG';
@@ -39,6 +38,8 @@ class AboutMe extends Component {
   }
 
   render() {
+    const data = this.props.data;
+    
     return(
       <section 
         className='aboutMe' id='aboutMe'>

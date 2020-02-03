@@ -7,13 +7,15 @@
 }
 
 .fireflies__firefly {
-  will-change: translate !important;
+  will-change: transform;
   background: transparent;
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 24px 4px #ffb700, inset 0px 0px 12px 0px rgba(255, 183, 0, 0.4);
           box-shadow: 0px 0px 24px 4px #ffb700, inset 0px 0px 12px 0px rgba(255, 183, 0, 0.4);
-  -webkit-transition: 40s linear;
-  transition: 40s linear;
+  -webkit-transition: -webkit-transform 40s;
+  transition: -webkit-transform 40s;
+  transition: transform 40s;
+  transition: transform 40s, -webkit-transform 40s;
   -webkit-animation-name: firefly;
           animation-name: firefly;
   -webkit-animation-duration: 10s;
@@ -22,8 +24,6 @@
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -9,6 +9,10 @@
 	cursor: pointer;
 	bottom: 0;
 	left: 40%;
+
+	&:hover {
+		will-change: transform;
+	}
 }
 
 .fire {
@@ -203,13 +207,14 @@
 	.bonfire {
 		width: 50px;
 		height: 50px;
+		left: 60%;
 	}
 
 	.fire {
 		position: relative;
 		width: 1px;	
 		transition: all 1200ms linear; 
-		margin-left: 0;
+		margin-left: -2px;
 		margin-top: 0;
 	}
 	
@@ -389,30 +394,5 @@
 		bottom: -21px;
 		left: -10px; 
 		transform: scale(0.15, 0.15) rotate(45deg);
-	}
-	
-
-  @media screen and (max-aspect-ratio: 14/10) {
-		.bonfire {
-			left: 60%;
-    }
-	}
-
-	@media screen and (max-aspect-ratio: 10/10) {
-		.header {
-
-			&::after {
-				background-position-x: 30%;
-			}
-
-			&__person {
-				width: 140px;
-				height: 140px;
-				position: absolute;
-				right: 34vw;
-				z-index: 1;
-				transform: scale(-1, 1);
-			}
-		}
 	}
 }

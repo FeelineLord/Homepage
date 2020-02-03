@@ -45,24 +45,14 @@
   }
 }
 
-@media screen and (max-aspect-ratio: 12/10) {
-  .header {
-    height: 50vh;
-
-    &__person {
-      bottom: 1vw;
-    }
-  }
-}
-
 @media screen and (max-width: 1000px) {
   .header {
     &__person {
       width: 140px;
       height: 140px;
       position: absolute;
-      bottom: 2vw;
-      right: 30vw;
+      bottom: 8vw;
+      right: 45vw;
       transform: scale(-1, 1);
     }
 
@@ -74,18 +64,6 @@
     &__bonfire {
       bottom: calc(5vw - 20px);
       right: 35vw;
-    }
-  }
-
-  @media screen and (max-aspect-ratio: 14/10) {
-    .header {      
-      &__person {
-        width: 140px;
-        height: 140px;
-        position: absolute;
-        bottom: 2vw;
-        right: 34vw;
-      }
     }
   }
 }

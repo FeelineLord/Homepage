@@ -6,7 +6,7 @@
   padding: 80px 10vw;
   box-sizing: border-box;
   position: relative;
-  margin-top: -1px;
+  margin-top: -2px;
   display: flex;
   align-items: center;
 
@@ -75,7 +75,6 @@
   &_text1_showFromTop,
   &_text2_showFromTop,
   &_text3_showFromTop {
-    will-change: transform, opacity;
     opacity: 0.6;
     animation-name: ShowFromTop;
     animation-fill-mode: forwards;
@@ -133,8 +132,6 @@
     &_adaptiveText1_showFromTop,
     &_adaptiveText2_showFromTop,
     &_adaptiveText3_showFromTop {
-      will-change: transform, opacity;
-      transform: translateX(-10vw);
       opacity: 0.6;
       animation-name: ShowFromLeft;
       animation-fill-mode: forwards;

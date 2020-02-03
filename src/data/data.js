@@ -99,9 +99,9 @@ decision to the best condition by fixing all defects.`,
       interestsDevelopmentTextEn2 = `Among my other priorities is the expansion of my technology stack and deeper research of what I
 use every day. It is really nice to find new possibilities and immediately use them in a real-case scenario :)`,
       interestsDevelopmentTextRu1 = `Front-end приносит мне множество эмоций и удовольствия. Для меня одинаково интересно
-разрабатывать функционал с логикой, и верстать. Но больше всего я люблю разрабатывать проект, или отдельный его элемент
+продумывать функционал с логикой и верстать. Но больше всего я люблю разрабатывать проект, или отдельный его элемент
 с нуля. Так же, очень люблю поломать голову над внешним видом и доводить готовое решение до наилучшего состояния, исправляя
-все погрешности.`,
+все деффекты.`,
       interestsDevelopmentTextRu2 = `Так же, в списке моих приоритетов - расширение своего стека технологий и более глубокое изучение того, чем пользуюсь каждый
 день. Очень приятно находить новые возможности и сразу использовать их на практике :)`;
 
@@ -138,7 +138,7 @@ const portfolioProjectDescriptionEn1 = `Mini todo-app (react)`,
       portfolioProjectDescriptionRu2 = `Лендинг на чистом HTML + CSS + JavaScript`,
       portfolioProjectDescriptionRu3 = `Лендинг на чистом HTML + CSS + JavaScript`;
 
-const data = {
+export const dataEn = {
   linkNamesCurrent: linkNamesEn,
   aboutMeHeadingCurrent: aboutMeHeadingEng,
   aboutMeNameCurrent: aboutMeNameEng,
@@ -177,4 +177,41 @@ const data = {
   portfolioProjectDescriptionCurrent3: portfolioProjectDescriptionEn3,
 };
 
-export default data;
+export const dataRu = {
+  linkNamesCurrent: linkNamesRu,
+  aboutMeHeadingCurrent: aboutMeHeadingRu,
+  aboutMeNameCurrent: aboutMeNameRu,
+  aboutMeTextCurrent1: aboutMeTextRu1,
+  aboutMeTextCurrent2: aboutMeTextRu2,
+  aboutMeTextCurrent3: aboutMeTextRu3,
+  skillsFrontEndTextCurrent: skillsFrontEndTextRu,
+  skillsDesignTextCurrent: skillsDesignTextRu,
+  skillsProgress: {
+    html: 80,
+    css: 75,
+    javaScript: 55,
+    react: 65,
+    ajax: 70,
+    webpack: 40,
+    ui: 70,
+    figma: 60,
+    photoshop: 80,
+    illustrator: 30,
+    handleDraw: 50,
+    cssTricks: 70,
+  },
+  interestesHeadingDevelopmentCurrent: interestsHeadingDevelopmentRu,
+  interestesHeadingFantasyCurrent: interestsHeadingFantasyRu,
+  interestesHeadingDesignCurrent: interestsHeadingDesignRu,
+  interestsDevelopmentTextCurrent1: interestsDevelopmentTextRu1,
+  interestsDevelopmentTextCurrent2: interestsDevelopmentTextRu2,
+  interestsFantasyTextCurrent1: interestsFantasyTextRu1,
+  interestsFantasyTextCurrent2: interestsFantasyTextRu2,
+  interestsDesignTextCurrent1: interestsDesignTextRu1,
+  interestsDesignTextCurrent2: interestsDesignTextRu2,
+  portfolioHeadingCurrent: portfolioHeadingRu,
+  portfolioAdviceCurrent: portfolioAdviceRu,
+  portfolioProjectDescriptionCurrent1: portfolioProjectDescriptionRu1,
+  portfolioProjectDescriptionCurrent2: portfolioProjectDescriptionRu2,
+  portfolioProjectDescriptionCurrent3: portfolioProjectDescriptionRu3,
+};

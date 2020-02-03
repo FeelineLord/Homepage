@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import data from '../../data/data';
-
 
 class Skills extends Component {
   constructor() {
@@ -32,6 +30,8 @@ class Skills extends Component {
   };
 
   showProgrammingSkills = () => {
+    const data = this.props.data;
+
     this.skillsContains(data.skillsProgress.html, (arg) => {
       this.setState({
         html: arg
@@ -65,6 +65,8 @@ class Skills extends Component {
   };
 
   showDesignSkills = () => {
+    const data = this.props.data;
+
     this.skillsContains(data.skillsProgress.ui, (arg) => {
       this.setState({
         uiUx: arg
@@ -98,7 +100,7 @@ class Skills extends Component {
   };
 
   skillsContains = (required, callback) => {
-    let counter = 0;
+    let counter = Math.trunc((Math.random() * 20 + 1));
     const interval = setInterval(() => {
       if (counter === required) {
         callback(counter);
@@ -107,10 +109,11 @@ class Skills extends Component {
         callback(counter);
         counter += 1;
       };
-    }, 20)
+    }, 30)
   };
 
   render() {
+    const data = this.props.data;
     return(
       <section className='skills' id={this.props.ids.skillsBlock}>
         <section className='skills__container'>

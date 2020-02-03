@@ -6,16 +6,15 @@
   z-index: 3;
 
   &__firefly {
-    will-change: translate !important;
+    will-change: transform;
     background: transparent;
     border-radius: 50%;
     box-shadow: 0px 0px 24px 4px rgba(255,183,0,1), inset 0px 0px 12px 0px rgba(255,183,0,0.4);
-    transition: 40s linear;
+    transition: transform 40s;
     animation-name: firefly;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     opacity: 1;
     display: flex;
     justify-content: center;

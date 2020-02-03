@@ -1,0 +1,18 @@
+.settingsBar {
+  display: flex;
+  width: 240px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1099px) {
+  .settingsBar {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .settingsBar {
+    width: 160px;
+  };
+};

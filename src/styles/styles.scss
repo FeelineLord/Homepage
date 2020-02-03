@@ -2,6 +2,10 @@
 
 @import '../components/Header/_header';
 @import '../components/NavBar/_navBar';
+@import '../components/NavBar/SettingsBar/_settingsBar';
+@import '../components/NavBar/SettingsBar/_fullScreenOption';
+@import '../components/NavBar/SettingsBar/_languageChangeOption';
+@import '../components/NavBar/SettingsBar/_musicOption';
 @import '../components/Welcome/_welcome';
-@import '../components/Main/main';
-@import '../components/Footer/footer';
+@import '../components/Main/_main';
+@import '../components/Footer/_footer';

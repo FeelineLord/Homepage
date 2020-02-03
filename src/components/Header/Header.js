@@ -30,8 +30,13 @@ class Header extends Component {
   render() {
     return(
       <header className='header' id='header'>
-        <NavBar className='header__navBar'></NavBar>
-        {this.state.width >= 1000
+        <NavBar 
+          className='header__navBar'
+          languageChange={this.props.languageChange}
+          languageCurrent={this.props.languageCurrent}
+          data={this.props.data}>
+        </NavBar>
+        {this.state.width >= 1100
           ? <Welcome logo={logo}/>
           : null}
         <Fireflies></Fireflies>

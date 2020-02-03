@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import data from '../../data/data';
 
 import develop from '../../img/interestDevelop.png';
 import games from '../../img/interestGames.png';
@@ -15,6 +14,7 @@ class Interests extends Component {
   };
 
   render() {
+    const data = this.props.data;
     return(
       <section className='interests' id='interests'>
         <article className='interests__container' id={this.props.ids.element1}>

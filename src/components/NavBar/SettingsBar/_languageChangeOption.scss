@@ -1,0 +1,62 @@
+.languageChange {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: 1px solid black;
+  box-shadow: inset 0px 0px 21px 0px rgba(0,0,0,0.75);
+  position: relative;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 10px #FFFFFF;
+  transition: font-size ease-in-out 0.3s;
+
+  /* width: 64px;
+  height: 64px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url(../img/settingsBg.png);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 10px #FFFFFF;
+  transition: font-size ease-in-out 0.3s; */
+
+  &:hover {
+    font-size: 28px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .languageChange {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.75);
+    position: relative;
+    font-size: 16px;
+    transition: font-size ease-in-out 0.3s;
+
+    &:hover {
+      font-size: 20px;
+    }
+  }
+}
