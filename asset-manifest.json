@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.d814461d.chunk.css",
+    "main.css": "/Homepage/static/css/main.fc7c6f0a.chunk.css",
     "main.js": "/Homepage/static/js/main.24038e5f.chunk.js",
     "main.js.map": "/Homepage/static/js/main.24038e5f.chunk.js.map",
     "runtime-main.js": "/Homepage/static/js/runtime-main.cbf684ed.js",
@@ -8,9 +8,9 @@
     "static/js/2.999085fb.chunk.js": "/Homepage/static/js/2.999085fb.chunk.js",
     "static/js/2.999085fb.chunk.js.map": "/Homepage/static/js/2.999085fb.chunk.js.map",
     "index.html": "/Homepage/index.html",
-    "precache-manifest.083c21518f4f403533cd601020b72ee1.js": "/Homepage/precache-manifest.083c21518f4f403533cd601020b72ee1.js",
+    "precache-manifest.c5f301537e15884318d0be3c9a63fa93.js": "/Homepage/precache-manifest.c5f301537e15884318d0be3c9a63fa93.js",
     "service-worker.js": "/Homepage/service-worker.js",
-    "static/css/main.d814461d.chunk.css.map": "/Homepage/static/css/main.d814461d.chunk.css.map",
+    "static/css/main.fc7c6f0a.chunk.css.map": "/Homepage/static/css/main.fc7c6f0a.chunk.css.map",
     "static/js/2.999085fb.chunk.js.LICENSE": "/Homepage/static/js/2.999085fb.chunk.js.LICENSE",
     "static/media/Ivan Torrent - icarus.mp3": "/Homepage/static/media/Ivan Torrent - icarus.716c1e64.mp3",
     "static/media/SpeakerEmpty.png": "/Homepage/static/media/SpeakerEmpty.9e4ff2b7.png",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.cbf684ed.js",
     "static/js/2.999085fb.chunk.js",
-    "static/css/main.d814461d.chunk.css",
+    "static/css/main.fc7c6f0a.chunk.css",
     "static/js/main.24038e5f.chunk.js"
   ]
 }
