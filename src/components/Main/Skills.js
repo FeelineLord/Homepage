@@ -109,7 +109,7 @@ class Skills extends Component {
         callback(counter);
         counter += 1;
       };
-    }, 30)
+    }, 30);
   };
 
   render() {

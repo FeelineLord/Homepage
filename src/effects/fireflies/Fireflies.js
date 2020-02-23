@@ -8,20 +8,20 @@ class Fireflies extends Component {
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
-    }
+    };
 
     this.firefliesArr = [];
     this.firefliesArr.length = Math.trunc(window.innerWidth / 60);
     this.firefliesArr.fill('el');
     this.wrapper = React.createRef();
-  }
+  };
 
   componentDidMount() {
-    this.setState({wasStarted: true})
+    this.setState({wasStarted: true});
     this.createFireflies();
     setTimeout(this.firefliesMove, 20);
     setInterval(this.firefliesMove, 20000);
-  }
+  };
 
   createFireflies = () => {
     this.firefliesArr = this.firefliesArr.map((el, index) => {
@@ -59,9 +59,9 @@ class Fireflies extends Component {
           id={'firefly' + index}>
             <span className='fireflies__fireflyInsert'></span>
         </span>
-      )
+      );
     });
-  }
+  };
 
   firefliesMove = () => {
     this.firefliesArr.forEach((item, index) => {
@@ -76,8 +76,8 @@ class Fireflies extends Component {
 
       let element = document.querySelector(`#firefly${index}`);
       element.style.transform = `translate(${left}px, ${top}px)`;
-    })
-  }
+    });
+  };
 
   render() {
     return(
@@ -86,8 +86,8 @@ class Fireflies extends Component {
       }}>
         {this.firefliesArr}
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default Fireflies;

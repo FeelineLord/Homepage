@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-import logo from '../../img/logo.png';
-
-import Welcome from '../Welcome/Welcome';
 import SettingsBar from './SettingsBar/SettingsBar';
 
 class NavBar extends Component {
@@ -96,7 +93,8 @@ class NavBar extends Component {
                     className='navBar__item'
                     key={item.name}>
                     <a 
-                      href={'#' + item.href} 
+                      href={'#' + item.href}
+                      rel="noopener noreferrer" 
                       id={index}
                       className={'navBar__link activeLink'} 
                     >
@@ -110,7 +108,8 @@ class NavBar extends Component {
                     className='navBar__item'
                     key={item.name}>
                     <a 
-                      href={'#' + item.href} 
+                      href={'#' + item.href}
+                      rel="noopener noreferrer" 
                       id={index}
                       className={'navBar__link hoverLink'} 
                       onClick={this.navScroll}>
@@ -155,6 +154,7 @@ class NavBar extends Component {
                     key={item.name}>
                     <a 
                       href={'#' + item.href}
+                      rel="noopener noreferrer"
                       id={index} 
                       className='navBar__link navBar__link_adaptive activeLink' 
                     >
@@ -169,6 +169,7 @@ class NavBar extends Component {
                     key={item.name}>
                     <a 
                       href={'#' + item.href}
+                      rel="noopener noreferrer"
                       id={index} 
                       className='navBar__link navBar__link_adaptive hoverLink'
                       onClick={this.navScroll}
@@ -179,7 +180,6 @@ class NavBar extends Component {
                 )
               }
             })}
-            {/* <div className='navBar_dark navBar_dark_ul'></div> */}
           </ul>
         </nav>
       );

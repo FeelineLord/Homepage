@@ -66,4 +66,23 @@
       right: 35vw;
     }
   }
+
+  @media screen and(max-height: 750px) {
+    .header {
+      &__person {
+        bottom: 3vw;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 700px) {
+  @media screen and(max-height: 500px) {
+    .header {
+      &__person {
+        bottom: 1vw;
+        right: 26vw;
+      }
+    }
+  }
 }
